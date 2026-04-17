@@ -1,0 +1,6 @@
+streamlit==1.30.0
+tensorflow==2.13.0
+pillow
+numpy
+pandas
+deep-translator==1.10.1
