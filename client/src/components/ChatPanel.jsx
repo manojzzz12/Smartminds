@@ -29,12 +29,13 @@ export function ChatPanel({
   }
 
   return (
-    <section className="panel panel-stretch">
+    <section className="panel panel-stretch chat-panel">
       <div className="panel-header">
         <div>
           <h2>Notebook Chat</h2>
           <p>Ask grounded questions, request summaries, or generate quizzes and mind maps.</p>
         </div>
+        <div className="panel-kicker">Conversation Mode</div>
       </div>
 
       <div className="chat-thread">

@@ -2,18 +2,22 @@ export function QuizPanel({ uploads }) {
   const quizItems = uploads?.flatMap((upload) => upload.analysis?.quiz || []) || [];
 
   return (
-    <section className="panel">
+    <section className="panel quiz-panel">
       <div className="panel-header">
         <div>
           <h2>Quiz Generator</h2>
           <p>Auto-generated comprehension checks from the source material.</p>
         </div>
+        <div className="panel-kicker">Review Lab</div>
       </div>
-      <div className="stack-list">
+      <div className="quiz-grid">
         {quizItems.length ? (
           quizItems.map((item, index) => (
-            <article key={`${item.question}-${index}`} className="content-card">
-              <h3>{index + 1}. {item.question}</h3>
+            <article key={`${item.question}-${index}`} className="content-card quiz-card">
+              <div className="quiz-card-top">
+                <span className="quiz-badge">{index + 1}</span>
+                <h3>{item.question}</h3>
+              </div>
               <ul className="option-list">
                 {item.options?.map((option) => (
                   <li key={option}>{option}</li>

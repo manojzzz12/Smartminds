@@ -49,12 +49,13 @@ export function UploadPanel({ notebookId, onUploaded, selectedMode, onModeChange
   }
 
   return (
-    <section className="panel">
+    <section className="panel upload-panel">
       <div className="panel-header">
         <div>
           <h2>Source Ingestion</h2>
           <p>Upload PDFs, Office docs, images, audio, and video into this notebook.</p>
         </div>
+        <div className="panel-kicker">Ingestion Hub</div>
       </div>
       <div className="upload-grid">
         <label className="upload-dropzone">

@@ -73,23 +73,24 @@ export function AdminPanel({ visible }) {
   if (!visible) return null;
 
   return (
-    <section className="panel">
+    <section className="panel admin-panel-shell">
       <div className="panel-header">
         <div>
           <h2>Admin Control</h2>
           <p>Manage templates, provider preferences, and usage visibility.</p>
         </div>
+        <div className="panel-kicker">Control Deck</div>
       </div>
       {status ? <p className="status-text">{status}</p> : null}
       {data ? (
         <div className="admin-grid">
-          <article className="content-card">
+          <article className="content-card admin-card usage-card">
             <h3>Usage</h3>
             <p>Users: {data.metrics.users}</p>
             <p>Notebooks: {data.metrics.notebooks}</p>
             <p>Uploads: {data.metrics.uploads}</p>
           </article>
-          <article className="content-card">
+          <article className="content-card admin-card providers-card">
             <h3>Providers</h3>
             <select
               value={form.defaultProvider}
@@ -107,7 +108,7 @@ export function AdminPanel({ visible }) {
               ))}
             </select>
           </article>
-          <article className="content-card">
+          <article className="content-card admin-card templates-card">
             <h3>Notebook Templates</h3>
             <ul className="option-list">
               {data.config.notebookTemplates.map((template) => (
@@ -125,7 +126,7 @@ export function AdminPanel({ visible }) {
               }
             />
           </article>
-          <article className="content-card">
+          <article className="content-card admin-card branding-card">
             <h3>Branding</h3>
             <input
               placeholder="Hero title"
